@@ -1,0 +1,11 @@
+{
+    "name": "com.adonis.initialize_system",
+    "version": "1.0.0",
+    "displayName": "Initialize System",
+    "description": "A Unity package to initialize and manage system settings and configurations.",
+    "unity": "2022.3",
+    "author": {
+        "name": "Adonis",
+        "email": "wintiger0908@gmail.com"
+    }
+}
