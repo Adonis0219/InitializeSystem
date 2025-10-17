@@ -22,7 +22,7 @@ public class CoreManager : Singleton<CoreManager>
         Initializer initializer = FindFirstObjectByType<Initializer>();
 
         if (initializer != null)
-            FindFirstObjectByType<Initializer>().OnSortComplete += RegisterManagers;
+            initializer.OnSortComplete += RegisterManagers;
         else
             GameLogger.LogError("Initializer가 씬에 존재하지 않습니다. CoreManager가 매니저들을 등록할 수 없습니다.");
     }
