@@ -4,10 +4,4 @@ using UnityEngine;
 public interface IPullManager : IInitializable
 {
     public void PullUseManager();
-
-    // PullUseManager는 PostInit에서 필수적으로 호출됨
-    void IInitializable.PostInit()
-    {
-        PullUseManager();
-    }
 }

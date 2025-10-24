@@ -31,9 +31,18 @@ public class CoreManager : Singleton<CoreManager>
     {
         managers = initializables.OfType<BaseManager>().ToList();
 
+        NotifyPullManagers();
+
         GameLogger.Log("CoreManager : 매니저들이 등록되었습니다.");
     }
 
+    void NotifyPullManagers()
+    {
+        var pullables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+            .OfType<IPullManager>();
+
+        foreach (var p in pullables) p.PullUseManager();
+    }
 
     // 제네릭 T를 class, IManager를 둘 다 가진 형태로만 한정
     /// <summary>

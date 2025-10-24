@@ -34,3 +34,10 @@
     - **코드 비교**
         - **변경 전 :** `if (initializer != null) FindFirstObjectByType<Initializer>().OnSortComplete += RegisterManagers;`
         - **변경 후 :** `if (initializer != null) initializer.OnSortComplete += RegisterManagers;`
+
+------------------------------------------------------------
+## [1.0.3] - 2025-10-24
+### ♻️ Code Improvement (코드 개선)
+- **[Preformance] PullUseManager의 호출 순서 변경**
+    - CoreManager에 각 Manager들을 등록 후 즉시 IPullManager를 가진 모든 객체의 PullUseManager 실행
+        - **순서 꼬임 문제** 해결
