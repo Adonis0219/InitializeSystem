@@ -41,3 +41,9 @@
 - **[Preformance] PullUseManager의 호출 순서 변경**
     - CoreManager에 각 Manager들을 등록 후 즉시 IPullManager를 가진 모든 객체의 PullUseManager 실행
         - **순서 꼬임 문제** 해결
+
+------------------------------------------------------------
+## [1.0.4] - 2025-10-28
+### ✨ New Feature (새로운 기능)
+- **[Features] 씬 로드 시 [CoreSystem] 객체 자동 생성**
+    - **GameInitializer.cs** 추가
