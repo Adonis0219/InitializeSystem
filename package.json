@@ -1,6 +1,6 @@
 {
     "name": "com.adonis.initialize_system",
-    "version": "1.0.4",
+    "version": "1.1.0",
     "displayName": "Initialize System",
     "description": "A Unity package to initialize and manage system settings and configurations.",
     "license": "MIT",

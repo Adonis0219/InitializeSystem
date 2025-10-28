@@ -4,7 +4,12 @@ CoreManager를 통해 각 매니저들을 반환 받아 instance 객체의 개�
 사용법
 1. (중요) Edit -> Project Settings -> Script Execution Order 화면에서 CoreManager가 Initializer보다 상위에 있도록 설정해주세요.
 
-2. 자동 초기화를 사용할 객체 추가 방법
+2. (선택) 프리팹 설정
+**직접 CoreManager를 세팅할 거면 생략 가능**
+	- Assets/Resources 폴더에 우클릭 create > MyPackage > Core System Settings를 선택하여 에셋 설정
+	- 생성된 에셋의 인스펙터에 Samples 폴더 내의 [CoreSystem] 프리팹 할당
+
+3. 자동 초기화를 사용할 객체 추가 방법
 - Manager
 1) TestManager 스크립트에 BaseManager를 상속 받습니다
 	자동으로 생성되는 Init() 함수에 초기화 로직을 작성합니다

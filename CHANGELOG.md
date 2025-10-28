@@ -38,7 +38,7 @@
 ------------------------------------------------------------
 ## [1.0.3] - 2025-10-24
 ### ♻️ Code Improvement (코드 개선)
-- **[Preformance] PullUseManager의 호출 순서 변경**
+- **[Performance] PullUseManager의 호출 순서 변경**
     - CoreManager에 각 Manager들을 등록 후 즉시 IPullManager를 가진 모든 객체의 PullUseManager 실행
         - **순서 꼬임 문제** 해결
 
@@ -47,3 +47,12 @@
 ### ✨ New Feature (새로운 기능)
 - **[Features] 씬 로드 시 [CoreSystem] 객체 자동 생성**
     - **GameInitializer.cs** 추가
+
+
+============================================================
+## [1.1.0] - 2025-10-28
+### ♻️ Code Improvement (코드 개선)
+- **[Performance] CoreSystme 프리팹화 및 자동화 강화**
+    - Samples 폴더 내 [CoreSystem] 예시 프리팹 생성
+    - CoreSystemSettings.cs (Scriptable Object) 추가
+    - Readme.md 내 사용 방법 (2번 항목) 추가

@@ -15,17 +15,19 @@ public class GameInitializer : MonoBehaviour
             return;
         }
 
-        var coreSystemPrefab = Resources.Load<GameObject>("[CoreSystem]");
+        var settings = Resources.Load<CoreSystemSettings>("CoreSystemSettings");
 
-        if (coreSystemPrefab != null)
+        if (settings != null)
         {
-            var coreSystemObject = Instantiate(coreSystemPrefab);
+            GameLogger.LogError("CoreSystemSettings 에셋을 찾을 수 없습니다.");
+        }
 
-            coreSystemObject.name = coreSystemPrefab.name;
-        }
-        else
+        if (settings.coreSystemPrefab == null)
         {
-            GameLogger.LogError("Resources 폴더에서 [CoreSystem] 프리팹을 찾을 수 없습니다.");
+            GameLogger.LogError("CoreSystemSettings 에셋에 프리팹을 할당해주세요.");
         }
+
+        var coreSystemObj = Instantiate(settings.coreSystemPrefab);
+        coreSystemObj.name = settings.coreSystemPrefab.name;
     }
 }
