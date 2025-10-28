@@ -5,6 +5,7 @@ using UnityEngine;
 [InitOrder(InitOrder.CoreManager)]
 public class CoreManager : Singleton<CoreManager>
 {
+    [SerializeField]
     private List<BaseManager> managers;
     
     // [Header("# Main Entity")]
@@ -19,6 +20,7 @@ public class CoreManager : Singleton<CoreManager>
 
     private void LinkToAction()
     {
+        GameLogger.Log("액션 연결");
         Initializer initializer = FindFirstObjectByType<Initializer>();
 
         if (initializer != null)
@@ -29,6 +31,7 @@ public class CoreManager : Singleton<CoreManager>
 
     public void RegisterManagers(IEnumerable<IInitializable> initializables)
     {
+        GameLogger.Log("매니저 등록");
         managers = initializables.OfType<BaseManager>().ToList();
 
         NotifyPullManagers();
@@ -41,6 +44,7 @@ public class CoreManager : Singleton<CoreManager>
         var pullables = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
             .OfType<IPullManager>();
 
+        GameLogger.Log("풀 매니저");
         foreach (var p in pullables) p.PullUseManager();
     }
 
